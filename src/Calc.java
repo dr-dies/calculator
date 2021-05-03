@@ -84,11 +84,14 @@ class Parser {
         if(num==0){
             result = "Nulla";
         }
-        String romanOnes = latinDigit( Math.abs(num%10), "I", "V", "X");
+        String Ones = latinDigit( Math.abs(num%10), "I", "V", "X");
         num /=10;
-        String romanTens = latinDigit( Math.abs(num%10), "X", "L", "C");
+        String Tens = latinDigit( Math.abs(num%10), "X", "L", "C");
+        num /=10;
+        String Hundreds = latinDigit(Math.abs(num%10), "C", "D", "M");
 
-        result = result + romanTens + romanOnes;
+
+        result = result + Hundreds+ Tens + Ones;
 
         return result;
 
