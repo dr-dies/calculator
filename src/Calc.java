@@ -9,10 +9,10 @@ public class Calc {
         String operand = expr.getOperand();
         Calculate calculator = new Calculate();
         if(expr.isLatin()==1) {
-            System.out.println("Result: " + calculator.action(a, b, operand));
+            System.out.println(calculator.action(a, b, operand));
         }
         else {
-            System.out.println("Result: " + expr.toLatin(calculator.action(a, b, operand)));
+            System.out.println(expr.toLatin(calculator.action(a, b, operand)));
         }
         //System.out.println(expr.getNumberA());
         //System.out.println(expr.getNumberB());
@@ -142,7 +142,7 @@ class Parser {
 
         String [] op = {"+","-","*","/"};
         Scanner in = new Scanner(System.in);
-        System.out.print("Input expression: ");
+        //System.out.print("Input expression: ");
         this.expr = in.nextLine();
         this.expr = this.expr.replaceAll("\\s+","");
         if ('9' >= this.expr.charAt(0) && this.expr.charAt(0) > '0') {
