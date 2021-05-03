@@ -30,7 +30,7 @@ class Parser {
     private int latin = 0;
     private int posOp = 0;
 
-    public static String romanDigit(int n, String one, String five, String ten){
+    public static String latinDigit(int n, String one, String five, String ten){
 
         if(n >= 1)
         {
@@ -84,9 +84,9 @@ class Parser {
         if(num==0){
             result = "Nulla";
         }
-        String romanOnes = romanDigit( Math.abs(num%10), "I", "V", "X");
+        String romanOnes = latinDigit( Math.abs(num%10), "I", "V", "X");
         num /=10;
-        String romanTens = romanDigit( Math.abs(num%10), "X", "L", "C");
+        String romanTens = latinDigit( Math.abs(num%10), "X", "L", "C");
 
         result = result + romanTens + romanOnes;
 
@@ -113,7 +113,8 @@ class Parser {
         if(latin==1) {
             if (Integer.parseInt(a) > 0 || Integer.parseInt(a) <= 10) {
                 return Integer.parseInt(a);
-            } else {
+            }
+            else {
                 System.out.println("Incorrect expression!");
                 System.exit(-1);
                 return 0;
@@ -143,8 +144,7 @@ class Parser {
     public String getOperand() {
         return this.expr.substring(this.posOp, this.posOp+1);
     }
-    public String getExpr() {
-
+    public void getExpr() {
         String [] op = {"+","-","*","/"};
         Scanner in = new Scanner(System.in);
         //System.out.print("Input expression: ");
@@ -159,9 +159,7 @@ class Parser {
             }
 
         }
-
-
-        return expr;
+        //return expr;
     }
 
 
